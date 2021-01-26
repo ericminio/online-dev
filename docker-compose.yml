@@ -1,0 +1,17 @@
+version: "2.1"
+
+services:
+  code-server:
+    build: .
+    image: code-server:ready
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./config:/config
+    ports:
+      - 8443:8443
+    restart: unless-stopped
+    
