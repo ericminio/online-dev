@@ -1,14 +1,14 @@
-version: "2.1"
+version: "3.1"
 
 services:
 
   coder:
     build: .
+    container_name: coder
     environment:
       - "DOCKER_USER=$USER"
     volumes:
-      - ~/.config:/home/coder/.config
-      - .:/home/coder/project
+      - ./src:/home/coder/project
     ports:
-      - ${PORT}:8080
+      - 8080:8080
     
