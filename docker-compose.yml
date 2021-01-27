@@ -1,17 +1,14 @@
 version: "2.1"
 
 services:
-  code-server:
+
+  coder:
     build: .
-    image: code-server:ready
-    container_name: code-server
     environment:
-      - PUID=0
-      - PGID=0
-      - TZ=Etc/UTC
+      - "DOCKER_USER=$USER"
     volumes:
-      - .:/config
+      - ~/.config:/home/coder/.config
+      - .:/home/coder/project
     ports:
-      - ${PORT}:8443
-    restart: unless-stopped
+      - ${PORT}:8080
     

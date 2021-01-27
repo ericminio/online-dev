@@ -1,3 +1,4 @@
-FROM ghcr.io/linuxserver/code-server
+FROM codercom/code-server:latest
 
-WORKDIR /config/workspace
+RUN mkdir -p ~/.config
+
