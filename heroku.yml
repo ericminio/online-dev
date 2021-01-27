@@ -2,5 +2,5 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: docker-compose up code-server
+  web: docker-compose up coder
   
